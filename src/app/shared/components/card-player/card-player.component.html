@@ -1,0 +1,33 @@
+<!--Diseño del mode (small)-->
+<div *ngIf="mode=== 'small'" class="card-player player-small">
+  <img  appImgBroken [customImg]="'https://pro2-bar-s3-cdn-cf6.myportfolio.com/dfc1d2a1f454cf3916e81dcb431a12e5/a5c84570d41f47e8ac204c87_rw_3840.jpg?h=c48d99dff877371451c6b70204938134'" [src]="track.cover" [alt]="track.name" class="cover" />
+  <div class="content-player">
+    {{track.name}}
+  </div>
+  <div class="buttons-player">
+    <button *ngIf="true" class="play-btn">
+      <i class="uil " [ngClass]="{'uil-play': true}"></i>
+    </button>
+    <button *ngIf="false" class="play-btn">
+        <i class="uil uil-play"></i>
+    </button>
+  </div>
+</div>
+
+<!--Diseño del mode (big)-->
+
+<div *ngIf="mode==='big'" class="card-player player-big">
+    <img appImgBroken [customImg]="'https://pro2-bar-s3-cdn-cf6.myportfolio.com/dfc1d2a1f454cf3916e81dcb431a12e5/a5c84570d41f47e8ac204c87_rw_3840.jpg?h=c48d99dff877371451c6b70204938134'" [src]="track.cover" alt="" class="cover" />
+    <div class="content-player">
+        <div class="title-track">{{track.name}}</div>
+    </div>
+    <div class="buttons-player">
+        <button (click)="sendPlay(track)" *ngIf="true" class="play-btn">
+            <i class="uil" [ngClass]="{'uil-play':true}"></i>
+        </button>
+        <button *ngIf="false" class="play-btn">
+            <i class="uil uil-play"></i>
+        </button>
+    </div>
+</div>
+
